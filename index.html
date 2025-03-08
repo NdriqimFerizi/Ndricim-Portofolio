@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ndricim Ferizi - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#4f46e5'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        html { scroll-behavior: smooth; }
+        .nav-link.active { color: #6366f1; }
+        .project-card {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+        .project-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .social-icon {
+            transition: transform 0.3s ease;
+        }
+        .social-icon:hover {
+            transform: translateY(-5px);
+        }
+        @media (max-width: 768px) {
+            .mobile-menu {
+                transform: translateX(100%);
+                transition: transform 0.3s ease-in-out;
+            }
+            .mobile-menu.active {
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+<body class="bg-white font-['Inter']">
+    <nav class="fixed w-full bg-white/90 backdrop-blur-sm z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="text-2xl font-['Pacifico'] text-primary">Ndricim Ferizi</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link text-gray-600 hover:text-primary transition-colors">Home</a>
+                    <a href="#projects" class="nav-link text-gray-600 hover:text-primary transition-colors">Projects</a>
+                    <a href="#about" class="nav-link text-gray-600 hover:text-primary transition-colors">About</a>
+                    <a href="#contact" class="nav-link text-gray-600 hover:text-primary transition-colors">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-primary">
+                        <i class="ri-menu-line text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-menu fixed top-16 right-0 bottom-0 w-64 bg-white shadow-lg md:hidden">
+            <div class="flex flex-col py-4">
+                <a href="#home" class="px-6 py-2 text-gray-600 hover:bg-gray-50">Home</a>
+                <a href="#projects" class="px-6 py-2 text-gray-600 hover:bg-gray-50">Projects</a>
+                <a href="#about" class="px-6 py-2 text-gray-600 hover:bg-gray-50">About</a>
+                <a href="#contact" class="px-6 py-2 text-gray-600 hover:bg-gray-50">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="min-h-screen flex items-center relative overflow-hidden" style="background: linear-gradient(135deg, #f5f7ff 0%, #ffffff 100%);">
+        <div class="absolute w-full h-full">
+            <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/5 rounded-full filter blur-3xl"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/5 rounded-full filter blur-3xl"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="text-center md:text-left">
+                <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-4">Hi, I'm Ndricim Ferizi</h1>
+                <p class="text-xl md:text-2xl text-gray-600 mb-8">Front End Developer & Web Designer</p>
+                <p class="text-lg text-gray-600 mb-12 max-w-2xl">Passionate about creating beautiful, functional, and user-friendly applications that solve real-world problems.</p>
+                <a href="#projects" class="inline-block bg-primary text-white px-8 py-3 rounded-button text-lg font-medium hover:bg-secondary transition-colors cursor-pointer">View My Work</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-16">Featured Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="project-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="movie-webs.png" alt="Project 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Flixx Movie Website</h3>
+                        <p class="text-gray-600 mb-4">A responsive website for movie enthusiasts to explore and discover new movies and TV shows.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">React</span>
+                            <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">Tailwindcss</span>
+                            <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">JavaScript</span>
+                        </div>
+                        <a href="https://movie-app-gules-ten.vercel.app/" class="inline-block bg-primary text-white px-6 py-2 rounded-button hover:bg-secondary transition-colors cursor-pointer">View Project</a>
+                    </div>
+                </div>
+
+
+                <div class="project-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="cars-webs.png" alt="Project 3" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">E-car Dealership Platform</h3>
+                        <p class="text-gray-600 mb-4">A user-friendly platform for car dealers to manage inventory, sales, and customer relationships.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">JavaScript</span>
+                            <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">HTML/CSS</span>
+                            <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">WebSocket</span>
+                        </div>
+                        <a href="https://cars-website-lac.vercel.app/" class="inline-block bg-primary text-white px-6 py-2 rounded-button hover:bg-secondary transition-colors cursor-pointer">View Project</a>
+                    </div>
+                </div>
+
+
+                <div class="project-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="Travel-.png" alt="Project 3" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Travel Agency Website</h3>
+                        <p class="text-gray-600 mb-4">A responsive website for travel agencies to showcase their services and destinations.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">JavaScript</span>
+                            <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">HTML/CSS</span>
+                            <span class="px-3 py-1 bg-gray-100 rounded-full text-sm">Bootstrap</span>
+                        </div>
+                        <a href="https://travel-agency-website-sigma.vercel.app/" class="inline-block bg-primary text-white px-6 py-2 rounded-button hover:bg-secondary transition-colors cursor-pointer">View Project</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold mb-6">About Me</h2>
+                    <p class="text-gray-600 mb-6">I’m a passionate Front-End Developer with expertise in React, JavaScript, HTML, CSS, WordPress, and TypeScript. Driven by a strong determination to break into the tech industry, I focus on building innovative and impactful solutions.</p>
+                    <p class="text-gray-600 mb-6">With hands-on experience in various projects, I continuously push the boundaries of front-end development, refining my skills and exploring new possibilities. I thrive on challenges and am eager to contribute, learn, and grow in this ever-evolving field.</p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <h3 class="font-semibold mb-2">Frontend</h3>
+                            <ul class="space-y-2 text-gray-600">
+                                <li>React JS</li>
+                                <li>JavaScript</li>
+                                <li>TypeScript</li>
+                                <li>Tailwind CSS</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="IMG_9857.JPG" alt="Profile" class="rounded-lg shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12">Connect With Me</h2>
+            <div class="flex justify-center space-x-8">
+                <a href="https://www.linkedin.com/in/ndricim-ferizi-59689b27b/" class="social-icon w-12 h-12 flex items-center justify-center text-gray-600 hover:text-primary">
+                    <i class="ri-linkedin-fill text-2xl"></i>
+                </a>
+                <a href="https://github.com/NdriqimFerizi" class="social-icon w-12 h-12 flex items-center justify-center text-gray-600 hover:text-primary">
+                    <i class="ri-github-fill text-2xl"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-3xl font-bold text-center mb-12">Get In Touch</h2>
+                <form id="contact-form" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                        <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary focus:border-transparent outline-none" required>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                        <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary focus:border-transparent outline-none" required>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                        <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary focus:border-transparent outline-none" required></textarea>
+                    </div>
+                    <div>
+                        <button type="submit" class="w-full bg-primary text-white px-6 py-3 rounded-button hover:bg-secondary transition-colors cursor-pointer">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-white border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="text-center">
+                <a href="#" class="text-2xl font-['Pacifico'] text-primary mb-6 inline-block">Ndricim Ferizi </a>
+                <p class="text-gray-600 mb-8">Building digital experiences that matter.</p>
+                <div class="flex justify-center space-x-6 mb-8">
+                    <a href="#home" class="text-gray-600 hover:text-primary">Home</a>
+                    <a href="#projects" class="text-gray-600 hover:text-primary">Projects</a>
+                    <a href="#about" class="text-gray-600 hover:text-primary">About</a>
+                    <a href="#contact" class="text-gray-600 hover:text-primary">Contact</a>
+                </div>
+                <p class="text-gray-500 text-sm">© 2025 All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-primary text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 cursor-pointer hover:bg-secondary">
+        <i class="ri-arrow-up-line text-xl"></i>
+    </button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const projectCards = document.querySelectorAll('.project-card');
+            const backToTopButton = document.getElementById('back-to-top');
+            const contactForm = document.getElementById('contact-form');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('active');
+            });
+            function updateActiveSection() {
+                const scrollPosition = window.scrollY;
+                document.querySelectorAll('section').forEach(section => {
+                    const sectionTop = section.offsetTop - 100;
+                    const sectionBottom = sectionTop + section.offsetHeight;
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === '#' + section.id) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            projectCards.forEach(card => observer.observe(card));
+
+            window.addEventListener('scroll', () => {
+                updateActiveSection();
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.remove('opacity-0', 'invisible');
+                } else {
+                    backToTopButton.classList.add('opacity-0', 'invisible');
+                }
+            });
+            backToTopButton.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const formData = new FormData(contactForm);
+                const data = Object.fromEntries(formData);
+                
+                const notification = document.createElement('div');
+                notification.className = 'fixed bottom-4 right-4 bg-green-500 text-white px-6 py-3 rounded shadow-lg transform transition-transform duration-300 translate-y-full';
+                notification.textContent = 'Message sent successfully!';
+                document.body.appendChild(notification);
+                setTimeout(() => {
+                    notification.style.transform = 'translateY(0)';
+                }, 100);
+                setTimeout(() => {
+                    notification.style.transform = 'translateY(100%)';
+                    setTimeout(() => notification.remove(), 300);
+                }, 3000);
+
+                contactForm.reset();
+            });
+        });
+    </script>
+</body>
+</html>
